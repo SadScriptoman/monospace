@@ -1,0 +1,53 @@
+<div id="form">
+  <div>
+    <span></span>
+    <h2>{{this.svc.getText("FORM_HEAD")}}</h2>
+    <span></span>
+  </div>
+  <form action="#" method="post">
+    <div class="form-group">
+      <span>{{this.svc.getText("FORM_NAME_INFO")}}</span>
+      <input type="text" [(ngModel)]="fio" name="fio" id="form-fio">
+    </div>
+    <div class="form-group">
+      <span>{{this.svc.getText("FORM_COMPANY")}}</span>
+      <input type="text" [(ngModel)]="companyName" name="companyName" >
+      <span class="form-info" [ngClass]="{active: !companyName}">{{this.svc.getText("FORM_COMPANY_INFO")}}</span>
+    </div>
+    <div class="form-group">
+      <span>{{this.svc.getText("FORM_CONTACTS")}}</span>
+      <div id="contact-info">
+        <input type="text" placeholder="{{this.svc.getText('FORM_CITY')}}" value="" name="city" [(ngModel)]="city" id="form-city">
+        <select name="country" [(ngModel)]="country" id="form-country">
+          <option value="p0" disabled selected>{{this.svc.getText('FORM_COUNTRY')}}</option>
+          <option value="p1" >Пункт 1</option>
+          <option value="p2">Пункт 2</option>
+          <option value="p3">Пункт 3</option>
+          <option value="p4">Пункт 4</option>
+          <option value="p5">Пункт 5</option>
+          <option value="p6">Пункт 6</option>
+          <option value="p7">Пункт 7</option>
+        </select>
+        <input type="text" placeholder="{{this.svc.getText('FORM_INDEX')}}" name="index" [(ngModel)]="index" id="form-index">
+        <input type="text" placeholder="{{this.svc.getText('FORM_POSTAL')}}" name="postal" [(ngModel)]="postal" id="form-postal">
+        <input type="tel" placeholder="{{this.svc.getText('FORM_TEL')}}" name="tel" [(ngModel)]="tel" id="form-tel">
+        <input type="email" placeholder="{{this.svc.getText('FORM_EMAIL')}}" name="email" [(ngModel)]="email" id="form-mail">
+      </div>
+      <div class="next-btn">
+          <button type="submit" class="button-second-type" [disabled]="!fio||!city||!country||!index||!postal||!tel||!email">{{this.svc.getText("FORM_NEXT")}} →</button>
+          <div>
+            <span *ngIf="!fio||!city||!country||!index||!postal||!tel||!email; else thanks" class="form-state-info">{{this.svc.getText("FORM_INFO")}}
+              <span *ngIf="!fio" ><a href="#form-fio">{{this.svc.getText('FORM_NAME')}}</a></span><span *ngIf="!fio&&(!city||!country||!index||!postal||!tel||!email)" >, </span>
+              <span *ngIf="!city" ><a href="#form-city">{{this.svc.getText('FORM_CITY')}}</a></span><span  *ngIf="!city&&(!country||!index||!postal||!tel||!email)" >, </span>
+              <span *ngIf="!country"><a href="#form-country">{{this.svc.getText('FORM_COUNTRY')}}</a></span><span *ngIf="!country&&(!index||!postal||!tel||!email)" >, </span>
+              <span *ngIf="!index" ><a href="#form-index">{{this.svc.getText('FORM_INDEX')}}</a></span><span *ngIf="!index&&(!postal||!tel||!email)" >, </span>
+              <span *ngIf="!postal" ><a href="#form-postal">{{this.svc.getText('FORM_POSTAL')}}</a></span><span *ngIf="!postal&&(!tel||!email)" >, </span>
+              <span *ngIf="!tel" ><a href="#form-tel">{{this.svc.getText('FORM_TEL')}}</a></span><span *ngIf="!tel&&!email" >, </span>
+              <span *ngIf="!email" ><a href="#form-mail">{{this.svc.getText('FORM_EMAIL')}}</a></span>
+            </span>
+            <ng-template #thanks><span class="form-state-info">{{this.svc.getText('FORM_ALL_DONE')}}</span></ng-template>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>

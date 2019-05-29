@@ -4,8 +4,10 @@
     "outDir": "../out-tsc/spec",
     "types": [
       "jasmine",
-      "node"
-    ]
+      "node",
+    ],
+    "resolveJsonModule": true, 
+    "esModuleInterop": true
   },
   "files": [
     "test.ts",

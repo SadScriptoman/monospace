@@ -1,0 +1,15 @@
+<header>
+<nav>
+  <div>
+    <button [ngClass]="{active: (this.svc.lang  == 'en')}"  (click)="this.svc.changeLang('en')">EN</button>
+    <button [ngClass]="{active: (this.svc.lang  == 'ru')}" (click)="this.svc.changeLang('ru')">RU</button>
+  </div>
+  <ul>
+    <li><a href="#" class="active">{{this.svc.getText("APPLICATION")}}</a></li>
+    <li><a href="#">{{this.svc.getText("TERMS")}}</a> </li>
+    <li><a href="#">{{this.svc.getText("JURY")}}</a> </li>
+    <li><a href="#">{{this.svc.getText("CONTACTS")}}</a> </li>
+  </ul>
+</nav>
+</header>
+

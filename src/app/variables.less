@@ -1,0 +1,106 @@
+/* You can add global styles to this file, and also import other style files */
+@bg: lightgrey;
+@red-color: red;
+@gray-color: rgba(153, 153, 153, 0.719);
+@font-light: white;
+@font-dark: black;
+@base-transition-time: 0.3s;
+@base-transition-function: ease;
+@font-base-size: 14px;
+
+@font-family: Circe, Arial, sans-serif;
+
+.absolute-center{
+	position:absolute;
+	top:0;
+	left:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+}
+
+
+.font-size(@mult:1){
+	font-size: @font-base-size * @mult !important;
+}
+
+.overflow(){
+	overflow: hidden;
+	text-overflow: ellipsis;	
+	white-space: nowrap; 
+	-o-text-overflow: ellipsis;
+}
+
+.remove-list-style(){
+	list-style: none;
+	margin:0;
+	padding: 0;
+	li{
+		display: inline-block;
+	}
+}
+
+.remove-link-style(@font-color: @font-light){
+	text-decoration: none;
+	color:@font-color;
+}
+
+.remove-input-style(@font-color: @font-light; @font-size: @font-base-size){
+	background:none;
+	color:@font-color;
+	font-family: @font-family;
+	font-size: @font-size;
+	border:none;
+	&:focus{
+		outline: none;	
+	}
+}
+
+.remove-btn-style(@bg: none; @color: @font-light; @font-size: @font-base-size){
+	font-family: @font-family;
+	font-size: @font-size;
+	color:@color;
+	background:@bg;
+    border:none;
+    
+	&:hover{
+		cursor:pointer;
+	}
+	&:focus{
+		outline:none;
+	}
+}
+
+.flex(@justify-content: center; @align-items: center; @wrap: nowrap){
+	display: flex;
+	justify-content: @justify-content;
+	align-items: @align-items;
+	flex-wrap:@wrap;
+}
+
+.box(@width:auto; @height:auto; @border-radius: 0; @bg:none; @border:none; @box-sizing: content-box){
+	
+	width:@width;
+	height:@height;
+	background: @bg;
+	border: @border;
+	border-radius: @border-radius;
+	box-sizing: @box-sizing;
+	
+}
+
+.dev-box(@width; @height){
+	
+	.box(@width; @height; 0; fade(@base-color,20%); 1px solid white; border-box);
+	
+}
+
+.transition(@transtion-time: @base-transition-time; @function: @base-transition-function; @selector: all){
+	transition: @selector @transtion-time @function;
+}
+
+.scale(@scale){
+	transform: scale(@scale);
+	-webkit-transform: scale(@scale);
+	-moz-transform: scale(@scale);
+}

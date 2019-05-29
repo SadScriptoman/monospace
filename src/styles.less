@@ -1,1 +1,182 @@
-/* You can add global styles to this file, and also import other style files */
+@import "app/variables.less";
+
+.font-red{
+
+    color:red;
+
+}
+
+.button-first-type{
+
+	.font-size(1.22);
+	.remove-btn-style(none; @font-dark);
+	padding:9px;
+	box-sizing: border-box;
+	.transition();
+	&:hover{
+		color: @red-color;
+	}
+}
+
+.button-second-type{
+	.remove-btn-style(none; @red-color);
+	padding:5px 9px;
+	box-sizing: border-box;
+	.transition();
+    border-radius: 2px;
+    border:  1.5px  solid @red-color;
+	&:hover{
+		background: @red-color;
+		color: @font-light;
+	}
+	&[disabled]{
+
+		color: @gray-color !important;
+		background: none !important;
+		border: 1.5px solid @gray-color !important;
+		cursor: default;
+
+	}
+}
+
+.button-third-type{
+	.remove-btn-style(@red-color; @font-light);
+	padding:5px 9px;
+	box-sizing: border-box;
+	.transition();
+    border-radius: 2px;
+    border:  1px  solid @red-color;
+	&:hover{
+		background: none;
+		color: @red-color;
+	}
+	&[disabled]{
+
+		background: @gray-color !important;
+		color: @font-light !important;
+		border:  1px  solid @gray-color !important;
+		cursor: default;
+
+	}
+}
+
+.not-bold{
+
+	font-weight: normal!important;
+
+}
+
+.no-margin{
+
+	margin: 0!important;
+
+}
+
+input{
+
+    padding:5px 17px;
+	box-sizing: content-box;
+	.transition();
+	.box(auto; auto; 2px; @font-light);	
+	font-family: @font-family;
+	border-radius: 2px;
+	&:hover{
+		
+		box-shadow:inset 2px 2px 2px fade(@gray-color,50%) !important;
+		cursor: pointer;
+	}
+	&:focus{
+		outline-color:@red-color !important;
+		box-shadow: none !important;
+	}
+    &:not([readonly]),&:not([disabled]){
+		box-shadow: none;;
+	}
+	&[type='file'] {
+		display: none;
+	}
+	&[type='number'] {
+		-moz-appearance:textfield;
+	}
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+	}
+	&[readonly],&[disabled]{
+		cursor: default;	
+	}
+
+}
+
+select{
+
+	.box(auto; auto; 2px; white);
+	padding:5px 17px;	
+	&:hover{
+		
+		box-shadow:inset 2px 2px 2px fade(@gray-color,50%) !important;
+		cursor: pointer;
+	}
+	&:focus{
+		outline-color:@red-color !important;
+		box-shadow: none !important;
+	}
+	option[readonly],option[disabled]{
+		cursor: default;	
+		background-color:@gray-color;
+        color:@font-dark;
+	}
+}
+
+nav{
+	.flex(space-between);
+	
+    ul{
+	    .remove-list-style();
+	    .flex(space-between);
+	    li{
+	    	a{
+			    .remove-link-style;
+			    color:@red-color;
+			    .transition;
+			    &:hover, &.active{
+
+			    	border: 2px solid @red-color !important;
+
+			    }
+		    }
+
+        }
+        
+	}
+	
+	button{
+
+		.remove-btn-style(none; @red-color);
+		.transition();
+		&:hover, &.active{
+			background-color: @gray-color;
+			color: @font-light;
+		}
+	}
+
+}
+
+html{
+
+	font-size: @font-base-size;
+    font-family: @font-family;
+	background: @bg;
+	.flex;
+}
+
+body{
+	max-width:884px;
+}
+
+a{
+
+	.remove-link-style;
+	color:@red-color;
+
+}

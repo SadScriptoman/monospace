@@ -1,0 +1,11 @@
+<footer>
+  <div>
+    <input type="email" placeholder="{{this.svc.getText('FOOTER_SUBSCRIBE')}}" name="email" [(ngModel)]="email">
+    <button  class="button-third-type" [disabled]="!email">ОК</button>
+  </div>
+  <div>
+    <p>
+        {{this.svc.getText('FOOTER_1')}} <a href="#">{{this.svc.getText('FOOTER_2')}}</a>{{this.svc.getText('FOOTER_3')}}<a href="#">{{this.svc.getText('FOOTER_4')}}</a>{{this.svc.getText('FOOTER_5')}}<a href="#">{{this.svc.getText('FOOTER_6')}}</a>{{this.svc.getText('FOOTER_7')}}<a href="#">{{this.svc.getText('FOOTER_8')}}</a>
+    </p>
+  </div>
+</footer>

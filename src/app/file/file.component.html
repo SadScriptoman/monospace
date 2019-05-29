@@ -1,0 +1,31 @@
+<div>
+
+  <div>
+    <ul>
+      <li>{{this.svc.getText("FILE_1")}}</li>
+      <li>→</li>
+      <li class="active">{{this.svc.getText("FILE_2")}}</li>
+      <li>→</li>
+      <li>{{this.svc.getText("FILE_3")}}</li>
+    </ul>
+  </div>
+
+  <div id="drop-area"  (dragover)="handleDragOver($event)" (drop)="handleDrop($event)" (dragenter)="handleDragEnter($event)" (dragleave)="handleDragLeave($event)" accept=".jpg, .tif, .pdf " [ngClass] ="{highlight: dragOver}">
+    <form>
+      <span *ngIf="!files&&!dragOver">
+        <img src="../assets/jpg.svg" alt="jpg" width="48px">
+        <img src="../assets/tif.svg" alt="tif" width="48px">
+        <img src="../assets/pdf.svg" alt="pdf" width="48px">
+      </span>
+      <span *ngIf="!files&&!dragOver">
+        <span>{{this.svc.getText("FILE_INFO")}}</span>
+        <label>{{this.svc.getText("FILE_INPUT")}}<input type="file" (change)="handleFiles($event)" multiple accept=".jpg, .tif, .pdf " name="files"></label>
+      </span>
+      <ol *ngIf="files&&!dragOver">
+        <li *ngFor="let file of files">{{file.name}},&nbsp;{{file.size/1024}}&nbsp;{{this.svc.getText("FILE_SIZE")}}</li>
+      </ol>
+      <a *ngIf="files&&!dragOver" href="#" (click)="removeFiles($event)">{{this.svc.getText("FILE_DEL")}}</a>
+    </form>
+  </div>
+
+</div>

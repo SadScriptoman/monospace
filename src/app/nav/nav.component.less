@@ -1,0 +1,41 @@
+@import "../variables.less";
+
+nav{
+  margin-top:52px;
+	height:104px;
+	.flex(space-between);
+	.font-size(0.85);
+  ul{
+		min-width: 350px;
+		.remove-list-style();
+	  .flex(space-between);
+	  li{
+
+	    display: inline-block;
+	    a{
+				.remove-link-style;
+			  color:@red-color;
+			  .transition;
+			  box-sizing: border-box;
+		    border: 2px solid transparent;
+				padding: 5px;
+				&:hover, &.active{
+
+			    border: 2px solid @red-color !important;
+
+			  }
+			}		
+    }      
+  }
+
+  button{
+
+		.font-size(0.85);
+		border-radius: 50%;
+		height: 28px;
+		width: 28px;
+		margin: 3.5px;
+		padding:0;
+
+	}
+}
