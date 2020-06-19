@@ -1,6 +1,13 @@
-# TzTest
+# Monospace
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
+Проект для Monospace на Angular 7.x.x Делал его очень давно. По-сути тут просто реализована смена языка и поле для сброса файла. Ну и верстка по макету.
+
+## Скрины
+
+![Скрин 1](https://api.monosnap.com/file/download?id=PgIoobgjV8DusPskIIdX3Kre5Li9yy)
+![Скрин 2](https://api.monosnap.com/file/download?id=fDk955iQJLW5LfuRkAWdETkU6QMR7w)
+
+# Запуск приложения
 
 ## Development server
 
